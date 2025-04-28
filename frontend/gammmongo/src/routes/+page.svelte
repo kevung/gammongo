@@ -5,6 +5,7 @@
     import * as Carousel from "$lib/components/ui/carousel/index.js";
     import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+    import { Checkbox } from "$lib/components/ui/checkbox/index.js";
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -70,5 +71,8 @@
         </Breadcrumb.Item>
     </Breadcrumb.List>
 </Breadcrumb.Root>
+
+	
+<Checkbox />
 
 

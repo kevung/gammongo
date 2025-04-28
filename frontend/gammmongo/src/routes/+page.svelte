@@ -6,6 +6,10 @@
     import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
     import { Checkbox } from "$lib/components/ui/checkbox/index.js";
+    import { getLocalTimeZone, today } from "@internationalized/date";
+    import { Calendar } from "$lib/components/ui/calendar/index.js";
+
+     let value = today(getLocalTimeZone());
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -75,4 +79,4 @@
 	
 <Checkbox />
 
-
+<Calendar type="single" bind:value class="rounded-md border" />

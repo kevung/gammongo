@@ -7,7 +7,7 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
     import { Checkbox } from "$lib/components/ui/checkbox/index.js";
     import { getLocalTimeZone, today } from "@internationalized/date";
-    import { Calendar } from "$lib/components/ui/calendar/index.js";
+    //import { Calendar } from "$lib/components/ui/calendar/index.js";
     import Check from "@lucide/svelte/icons/check";
     import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
     import { tick } from "svelte";
@@ -17,6 +17,10 @@
     import * as Dialog from "$lib/components/ui/dialog/index.js";
     import { Input } from "$lib/components/ui/input/index.js";
     import { Label } from "$lib/components/ui/label/index.js";
+    import Calendar from "@lucide/svelte/icons/calendar";
+    // import * as CalendarIcon from "@lucide/svelte/icons/calendar";
+    import * as Avatar from "$lib/components/ui/avatar/index.js";
+    import * as HoverCard from "$lib/components/ui/hover-card/index.js";
 
     let value_calendar = today(getLocalTimeZone());
 
@@ -131,7 +135,7 @@
 	
 <Checkbox />
 
-<Calendar type="single" bind:value_calendar class="rounded-md border" />
+// <Calendar type="single" bind:value_calendar class="rounded-md border" />
 
 <Popover.Root bind:open>
     <Popover.Trigger bind:ref={triggerRef}>
@@ -200,3 +204,32 @@
         </Dialog.Footer>
     </Dialog.Content>
 </Dialog.Root>
+
+<HoverCard.Root>
+    <HoverCard.Trigger
+        href="https://github.com/sveltejs"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="rounded-sm underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-black"
+    >
+        @sveltejs
+    </HoverCard.Trigger>
+    <HoverCard.Content class="w-80">
+        <div class="flex justify-between space-x-4">
+            <Avatar.Root>
+                <Avatar.Image src="https://github.com/sveltejs.png" />
+                <Avatar.Fallback>SK</Avatar.Fallback>
+            </Avatar.Root>
+            <div class="space-y-1">
+                <h4 class="text-sm font-semibold">@sveltejs</h4>
+                <p class="text-sm">Cybernetically enhanced web apps.</p>
+                <div class="flex items-center pt-2">
+                    <Calendar class="mr-2 size-4 opacity-70" />
+                    <span class="text-muted-foreground text-xs">
+                        Joined September 2022
+                    </span>
+                </div>
+            </div>
+        </div>
+    </HoverCard.Content>
+</HoverCard.Root>
